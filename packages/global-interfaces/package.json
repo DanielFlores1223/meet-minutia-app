@@ -1,0 +1,8 @@
+{
+    "name": "global-interfaces",
+    "main": "src/index.ts",
+    "types": "src/index.ts",
+    "dependencies": {
+        "tsconfig": "*"
+    }
+}

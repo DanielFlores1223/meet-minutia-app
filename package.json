@@ -1,0 +1,40 @@
+{
+  "name": "meet-minutia",
+  "version": "0.0.1",
+  "description": "Express, React Monorepo",
+  "main": "index.js",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint:api": "eslint apps/api/src --fix --ext .ts",
+    "lint:client": "eslint apps/client/src --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:all": "npm run lint:api && npm run lint:client",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "Monorepo",
+    "javascript",
+    "typescript",
+    "node",
+    "express",
+    "turborepo",
+    "husky",
+    "eslint",
+    "precommit",
+    "react",
+    "vite"
+  ],
+  "author": "Daniel Flores",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "turbo": "^1.10.1",
+    "typescript": "^5.0.2"
+  }
+}
