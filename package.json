@@ -13,7 +13,8 @@
     "lint:api": "eslint apps/api/src --fix --ext .ts",
     "lint:client": "eslint apps/client/src --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:all": "npm run lint:api && npm run lint:client",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pg:up": "cd apps/api && docker-compose up"
   },
   "keywords": [
     "Monorepo",

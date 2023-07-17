@@ -3,3 +3,5 @@ dist
 package-lock.json
 .turbo
 .eslintcache
+.env
+postgres/
