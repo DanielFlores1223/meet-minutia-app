@@ -1,13 +1,6 @@
-import express, { Request, Response } from 'express';
-const app = express();
-const PORT = 3000;
+import { Server } from './classes';
+import dotenv from 'dotenv';
 
-app.get('/', (req: Request, res: Response) => {
-	res.json({
-		message: 'hello world MonoRepo :)',
-	});
-});
-
-app.listen(PORT, () => {
-	console.log('server started at http://localhost:' + PORT);
-});
+dotenv.config();
+const server = new Server();
+server.listen();
