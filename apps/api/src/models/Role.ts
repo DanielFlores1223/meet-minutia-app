@@ -1,12 +1,23 @@
-import { Model, Table, Column, DataType } from 'sequelize-typescript';
+import {
+	Model,
+	Table,
+	Column,
+	DataType,
+	Unique,
+	AllowNull,
+	HasMany,
+} from 'sequelize-typescript';
+import { User } from './';
 
 @Table({
 	tableName: 'roles',
 })
 export class Role extends Model {
-	@Column({
-		type: DataType.STRING(20),
-		unique: true,
-	})
+	@Unique
+	@AllowNull(false)
+	@Column(DataType.STRING(20))
 		name: string;
+
+	@HasMany(() => User)
+		users: User[];
 }
