@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize-typescript';
 import dotenv from 'dotenv';
-import * as models from '../models';
+import path from 'path';
+import * as models from '../models/esportDB';
 
 dotenv.config({ path: '.env' });
 

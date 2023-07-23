@@ -8,22 +8,15 @@ import {
 	AllowNull,
 	IsEmail,
 	Default,
-	PrimaryKey,
-	Unique,
+	HasMany,
 } from 'sequelize-typescript';
-import { Role } from './';
+import { UuidGenerator } from '../../mixins';
+import { UserAttributes, UserAttributesCreation } from './interfaces';
+import { Minute, Role } from '..';
 
-@Table({
-	tableName: 'users',
-})
-export class User extends Model {
-	@PrimaryKey
-	@Unique
-	@AllowNull(false)
-	@Default(DataType.UUIDV4)
-	@Column(DataType.UUID)
-		id: string;
-
+@Table({ tableName: 'users' })
+@UuidGenerator
+export class User extends Model<UserAttributes, UserAttributesCreation> {
 	@AllowNull(false)
 	@Column(DataType.STRING(50))
 		name: string;
@@ -52,4 +45,7 @@ export class User extends Model {
 
 	@BelongsTo(() => Role)
 		role: Role;
+
+	@HasMany(() => Minute)
+		users: Minute[];
 }
